@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #faf7f0;
+  --color-ink: #17141f;
+  --color-ink-soft: #55506a;
+  --color-limey: #c9f24f;
+  --color-viola: #7c6cff;
+  --color-coral: #ff7461;
+  --color-skyy: #6fd6ff;
+  --color-sunny: #ffc84d;
+  --color-rosy: #ffa9d6;
+  --color-minty: #8fe388;
+  --color-lav: #b9a8ff;
+  --font-display: var(--font-display-var), "Outfit", ui-sans-serif, sans-serif;
+  --font-sans: var(--font-sans-var), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+}
+
+::selection {
+  background: var(--color-limey);
+  color: var(--color-ink);
+}
+
+.bg-dots {
+  background-image: radial-gradient(rgba(23, 20, 31, 0.09) 1.2px, transparent 1.2px);
+  background-size: 22px 22px;
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(23, 20, 31, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(23, 20, 31, 0.06) 1px, transparent 1px);
+  background-size: 34px 34px;
+}
+
+.shadow-pop {
+  box-shadow: 4px 4px 0 0 var(--color-ink);
+}
+.shadow-pop-sm {
+  box-shadow: 2.5px 2.5px 0 0 var(--color-ink);
+}
+.shadow-pop-lg {
+  box-shadow: 7px 7px 0 0 var(--color-ink);
+}
+.shadow-pop-xs {
+  box-shadow: 1.5px 1.5px 0 0 var(--color-ink);
+}
+
+.press {
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease,
+    background-color 0.15s ease,
+    opacity 0.15s ease;
+}
+.press:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0.5px 0.5px 0 0 var(--color-ink) !important;
+}
+
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee 26s linear infinite;
+}
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--r, 0deg));
+  }
+  50% {
+    transform: translateY(-10px) rotate(var(--r, 0deg));
+  }
+}
+.animate-floaty {
+  animation: floaty 4s ease-in-out infinite;
+}
+
+@keyframes ping-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+.animate-ping-ring {
+  animation: ping-ring 1.6s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

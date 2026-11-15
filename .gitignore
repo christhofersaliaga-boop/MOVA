@@ -1,0 +1,21 @@
+# dependencies
+node_modules/
+
+# build
+.next/
+out/
+
+# entorno local (NO subir el .env real)
+.env
+.env.local
+
+# logs
+*.log
+
+# netlify
+.netlify/
+
+# sistema
+.DS_Store
+public/mova-netlify.zip
+mova-netlify.zip
